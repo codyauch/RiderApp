@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Rider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="MapView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Py-2F-tQ8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7F6-TP-BC9" userLabel="Overlay">
+                                <rect key="frame" x="5" y="683" width="365" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 KM/H" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgM-EX-Ak2" userLabel="SpeedLabel">
+                                        <rect key="frame" x="5" y="5" width="259" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass-image" translatesAutoresizingMaskIntoConstraints="NO" id="Dxd-X9-0kI" userLabel="UIImageView">
+                                        <rect key="frame" x="272" y="3" width="85" height="85"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="85" id="HPm-ZG-7r2"/>
+                                            <constraint firstAttribute="width" constant="85" id="MlA-Nf-idg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zgM-EX-Ak2" firstAttribute="leading" secondItem="7F6-TP-BC9" secondAttribute="leading" constant="5" id="DbO-GJ-1Rm"/>
+                                    <constraint firstItem="zgM-EX-Ak2" firstAttribute="top" secondItem="7F6-TP-BC9" secondAttribute="top" constant="5" id="MLC-uJ-QMR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dxd-X9-0kI" secondAttribute="trailing" constant="8" id="dbt-GN-7Qe"/>
+                                    <constraint firstItem="Dxd-X9-0kI" firstAttribute="leading" secondItem="zgM-EX-Ak2" secondAttribute="trailing" constant="8" id="kEb-mX-Uq6"/>
+                                    <constraint firstItem="Dxd-X9-0kI" firstAttribute="top" secondItem="7F6-TP-BC9" secondAttribute="top" constant="3" id="lco-Wi-8ms"/>
+                                    <constraint firstAttribute="height" constant="90" id="p31-Qv-SpL"/>
+                                    <constraint firstAttribute="bottom" secondItem="zgM-EX-Ak2" secondAttribute="bottom" constant="5" id="y48-Ap-MuM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7Py-2F-tQ8" secondAttribute="bottom" id="2ao-yn-7J8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7F6-TP-BC9" secondAttribute="trailing" constant="5" id="HE3-pJ-L6v"/>
+                            <constraint firstAttribute="trailing" secondItem="7Py-2F-tQ8" secondAttribute="trailing" id="Lfe-1Y-VPG"/>
+                            <constraint firstItem="7Py-2F-tQ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Oq9-1C-H3C"/>
+                            <constraint firstItem="7Py-2F-tQ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Tfq-Yw-gn1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7F6-TP-BC9" secondAttribute="bottom" constant="5" id="kJW-Id-daL"/>
+                            <constraint firstItem="7F6-TP-BC9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="pjM-pu-NlO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="compassImageView" destination="Dxd-X9-0kI" id="wfG-02-rR5"/>
+                        <outlet property="mapView" destination="7Py-2F-tQ8" id="GTd-Bn-4IO"/>
+                        <outlet property="speedLabel" destination="zgM-EX-Ak2" id="fqA-tc-ncu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="129.31034482758622"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compass-image" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
